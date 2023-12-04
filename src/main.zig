@@ -22,33 +22,49 @@ pub fn main() !void {
     {
         try stdout.print("Day 1:\n", .{});
         const input = try readInput(alloc, "test/1");
+        const start1 = std.time.microTimestamp();
         const results1 = day1.part1(input);
-        try stdout.print("Part 1: {}\n", .{results1});
+        const end1 = std.time.microTimestamp();
+        try stdout.print("Part 1({} microseconds): {}\n", .{ end1 - start1, results1 });
+        const start2 = std.time.microTimestamp();
         const results2 = day1.part2(input);
-        try stdout.print("Part 2: {}\n", .{results2});
+        const end2 = std.time.microTimestamp();
+        try stdout.print("Part 2({} microseconds): {}\n", .{ end2 - start2, results2 });
     }
     {
         try stdout.print("Day 2:\n", .{});
         const input = try readInput(alloc, "test/2");
+        const start1 = std.time.microTimestamp();
         const results1 = day2.part1(input);
-        try stdout.print("Part 1: {}\n", .{results1});
+        const end1 = std.time.microTimestamp();
+        try stdout.print("Part 1({} microseconds): {}\n", .{ end1 - start1, results1 });
+        const start2 = std.time.microTimestamp();
         const results2 = day2.part2(input);
-        try stdout.print("Part 2: {}\n", .{results2});
+        const end2 = std.time.microTimestamp();
+        try stdout.print("Part 2({} microseconds): {}\n", .{ end2 - start2, results2 });
     }
     {
         try stdout.print("Day 3:\n", .{});
         const input = try readInput(alloc, "test/3");
+        const start1 = std.time.microTimestamp();
         const results1 = day3.part1(alloc, input);
-        try stdout.print("Part 1: {}\n", .{results1});
+        const end1 = std.time.microTimestamp();
+        try stdout.print("Part 1({} microseconds): {}\n", .{ end1 - start1, results1 });
+        const start2 = std.time.microTimestamp();
         const results2 = day3.part2(alloc, input);
-        try stdout.print("Part 2: {}\n", .{results2});
+        const end2 = std.time.microTimestamp();
+        try stdout.print("Part 2({} microseconds): {}\n", .{ end2 - start2, results2 });
     }
     {
         try stdout.print("Day 4:\n", .{});
         const input = try readInput(alloc, "test/4");
+        const start1 = std.time.microTimestamp();
         const results1 = day4.part1(alloc, input);
-        try stdout.print("Part 1: {}\n", .{results1});
+        const end1 = std.time.microTimestamp();
+        try stdout.print("Part 1({} microseconds): {}\n", .{ end1 - start1, results1 });
+        const start2 = std.time.microTimestamp();
         const results2 = day4.part2(alloc, input);
-        try stdout.print("Part 2: {}\n", .{results2});
+        const end2 = std.time.microTimestamp();
+        try stdout.print("Part 2({} microseconds): {}\n", .{ end2 - start2, results2 });
     }
 }
