@@ -1,6 +1,8 @@
 const std = @import("std");
 const day1 = @import("day1.zig");
 const day2 = @import("day2.zig");
+const day3 = @import("day3.zig");
+const day4 = @import("day4.zig");
 
 fn readInput(alloc: std.mem.Allocator, name: []const u8) ![]u8 {
     var file = try std.fs.cwd().openFile(name, .{});
@@ -31,6 +33,22 @@ pub fn main() !void {
         const results1 = day2.part1(input);
         try stdout.print("Part 1: {}\n", .{results1});
         const results2 = day2.part2(input);
+        try stdout.print("Part 2: {}\n", .{results2});
+    }
+    {
+        try stdout.print("Day 3:\n", .{});
+        const input = try readInput(alloc, "test/3");
+        const results1 = day3.part1(alloc, input);
+        try stdout.print("Part 1: {}\n", .{results1});
+        const results2 = day3.part2(alloc, input);
+        try stdout.print("Part 2: {}\n", .{results2});
+    }
+    {
+        try stdout.print("Day 4:\n", .{});
+        const input = try readInput(alloc, "test/4");
+        const results1 = day4.part1(alloc, input);
+        try stdout.print("Part 1: {}\n", .{results1});
+        const results2 = day4.part2(alloc, input);
         try stdout.print("Part 2: {}\n", .{results2});
     }
 }
