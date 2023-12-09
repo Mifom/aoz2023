@@ -7,6 +7,7 @@ const day5 = @import("day5.zig");
 const day6 = @import("day6.zig");
 const day7 = @import("day7.zig");
 const day8 = @import("day8.zig");
+const day9 = @import("day9.zig");
 
 fn readInput(alloc: std.mem.Allocator, name: []const u8) ![]u8 {
     var file = try std.fs.cwd().openFile(name, .{});
@@ -116,6 +117,18 @@ pub fn main() !void {
         try stdout.print("Part 1({} microseconds): {}\n", .{ end1 - start1, results1 });
         const start2 = std.time.microTimestamp();
         const results2 = day8.part2(alloc, input);
+        const end2 = std.time.microTimestamp();
+        try stdout.print("Part 2({} microseconds): {}\n", .{ end2 - start2, results2 });
+    }
+    {
+        try stdout.print("Day 9:\n", .{});
+        const input = try readInput(alloc, "test/9");
+        const start1 = std.time.microTimestamp();
+        const results1 = day9.part1(alloc, input);
+        const end1 = std.time.microTimestamp();
+        try stdout.print("Part 1({} microseconds): {}\n", .{ end1 - start1, results1 });
+        const start2 = std.time.microTimestamp();
+        const results2 = day9.part2(alloc, input);
         const end2 = std.time.microTimestamp();
         try stdout.print("Part 2({} microseconds): {}\n", .{ end2 - start2, results2 });
     }
